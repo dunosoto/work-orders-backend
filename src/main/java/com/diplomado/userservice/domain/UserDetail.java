@@ -29,7 +29,7 @@ public class UserDetail {
   @JsonFormat(pattern = "yyyy-MM-dd")
   private Date birthDay;
   
-  @OneToOne
+  @OneToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "user_id")
   private User user;
   

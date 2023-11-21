@@ -30,7 +30,7 @@ public class User {
   @Temporal(TemporalType.TIMESTAMP)
   private Date createdAt;
   
-  @OneToOne(mappedBy = "user",cascade = CascadeType.ALL)
+  @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
   private UserDetail userDetail;
   
   @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
