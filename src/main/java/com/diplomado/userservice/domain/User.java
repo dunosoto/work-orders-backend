@@ -30,14 +30,9 @@ public class User {
   @Temporal(TemporalType.TIMESTAMP)
   private Date createdAt;
   
-  @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+  @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
   private UserDetail userDetail;
   
-  @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+  @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
   private List<UserRole> userRoles;
-  
-  
-  
-  
-  
 }

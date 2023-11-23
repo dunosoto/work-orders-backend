@@ -2,11 +2,13 @@ package com.diplomado.userservice.controller;
 
 
 import com.diplomado.userservice.api.request.user.CreateUserRequest;
+import com.diplomado.userservice.api.request.user.UpdateUserNameRequest;
 import com.diplomado.userservice.api.request.user.UpdateUserRequest;
 import com.diplomado.userservice.api.response.user.CreateUserResponse;
 import com.diplomado.userservice.api.response.user.UserListResponse;
 import com.diplomado.userservice.api.response.user.UserResponse;
 import com.diplomado.userservice.usecase.user.*;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,16 +22,16 @@ public class UserController {
   private CreateUserUseCase createUserUseCase;
   private UpdateUserUseCase updateUserUseCase;
   private DeleteUserUseCase deleteUserUseCase;
-  
-  //TODO: FALTA COMPLETAR LOS ROLES.
-  @PostMapping()
-  public CreateUserResponse saveUser(@RequestBody CreateUserRequest request) {
-    return createUserUseCase.execute(request);
+  private UpdateUserNameUseCase updateUserNameUseCase;
+  @PostMapping(params = {"details"})
+  public CreateUserResponse saveUser(@RequestBody @Valid CreateUserRequest request,
+                                     @RequestParam(value = "details", required = false, defaultValue = "true") boolean details) {
+    return createUserUseCase.execute(request, details);
   }
   
-  @GetMapping()
-  public UserListResponse getUsers() {
-    return getAllUsersUseCase.execute();
+  @GetMapping(params = {"details"})
+  public UserListResponse getUsers(@RequestParam(value = "details", required = false) boolean details) {
+    return getAllUsersUseCase.execute(details);
   }
   
   @GetMapping("/{id}")
@@ -40,6 +42,11 @@ public class UserController {
   @PutMapping("/{id}")
   public UserResponse updateUser(@RequestBody UpdateUserRequest request, @PathVariable("id") Long userId) {
     return updateUserUseCase.execute(request, userId);
+  }
+  
+  @PatchMapping("/{id}")
+  public UserResponse updateUserName(@RequestBody UpdateUserNameRequest request, @PathVariable("id") Long id) {
+    return updateUserNameUseCase.execute(request, id);
   }
 
   @DeleteMapping("/{id}")

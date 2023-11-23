@@ -7,6 +7,8 @@ import com.diplomado.userservice.service.IRoleService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 @AllArgsConstructor
 public class DeleteRoleUseCase {
@@ -16,9 +18,9 @@ public class DeleteRoleUseCase {
   
   
   public void execute(Long id) {
-    Role role = roleService.findById(id);
+    Optional<Role> role = roleService.findById(id);
   
-    if ( role == null) {
+    if (role.isEmpty()) {
       throw new NotFoundRoleException(message.getMessage("Role.not.found"));
     }
     

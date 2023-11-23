@@ -1,6 +1,7 @@
 package com.diplomado.userservice.usecase.user;
 
 
+import com.diplomado.userservice.api.dto.user.UserDto;
 import com.diplomado.userservice.api.response.user.UserListResponse;
 import com.diplomado.userservice.domain.User;
 import com.diplomado.userservice.mapper.UserMapper;
@@ -18,14 +19,18 @@ public class GetAllUsersUseCase {
   private IUserService userService;
   private UserMapper userMapper;
   
-  public UserListResponse execute() {
-  
+  public UserListResponse execute(boolean details) {
     List<User> userList = userService.getAll();
+    List<UserDto> userDtoList;
     
-    return new UserListResponse(
-      userList.stream().map(user ->
-        userMapper.userToUserDto(user)
-      ).collect(Collectors.toList())
-    );
+    if (details) {
+      userDtoList = userList.stream().map(userMapper::userToUserDto)
+        .collect(Collectors.toList());
+    } else {
+      userDtoList = userList.stream().map(userMapper::fromUserToUserDtoWithOutDetails)
+      .collect(Collectors.toList());
+    }
+    
+    return new UserListResponse(userDtoList);
   }
 }

@@ -1,6 +1,6 @@
 package com.diplomado.userservice.api.dto.user;
 
-import com.diplomado.userservice.domain.Role;
+import com.diplomado.userservice.api.dto.role.RoleDto;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,5 +17,5 @@ public class UserDto {
   private String email;
   private UserDetailDto userDetail;
   private Date createdAt;
-//  private List<Role> roles;
+  private List<RoleDto> roles;
 }

@@ -30,7 +30,7 @@ public class UpdateUserUseCase {
     
     User updatedUser = compose(user, request);
     
-    return new UserResponse(userMapper.userToUserDto(userService.save(updatedUser)));
+    return new UserResponse(userMapper.userToUserDto(userService.update(updatedUser)));
   }
   
   private User validateUserId(Long userId) {

@@ -33,8 +33,9 @@ public class UserDetail {
   @JoinColumn(name = "user_id")
   private User user;
   
-  
-  
-  
-  
+  @Override
+  public String toString() {
+    return "firstname".concat(firstName).concat("\n")
+      .concat("lastname").concat(lastName);
+  }
 }

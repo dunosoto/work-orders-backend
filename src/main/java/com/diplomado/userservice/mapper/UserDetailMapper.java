@@ -10,7 +10,7 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring")
 public interface UserDetailMapper {
 
-  UserDetail toUserDetail(CreateUserRequest request);
+  UserDetail createUserRequestToUserDetail(CreateUserRequest request);
   
   UserDetailDto toUserDetailDto(UserDetail userDetail);
   

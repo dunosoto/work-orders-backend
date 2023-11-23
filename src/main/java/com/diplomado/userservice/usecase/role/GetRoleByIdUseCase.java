@@ -10,6 +10,8 @@ import com.diplomado.userservice.service.IRoleService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 @AllArgsConstructor
 public class GetRoleByIdUseCase {
@@ -19,11 +21,11 @@ public class GetRoleByIdUseCase {
   private Message message;
   
   public RoleResponse execute(Long roleId) {
-    Role role = roleService.findById(roleId);
+    Optional<Role> role = roleService.findById(roleId);
   
-    if ( role == null) {
+    if (role.isEmpty()) {
       throw new NotFoundRoleException(message.getMessage("Role.not.found"));
     }
-    return new RoleResponse(roleMapper.roleToRoleDto(role));
+    return new RoleResponse(roleMapper.roleToRoleDto(role.get()));
   }
 }
