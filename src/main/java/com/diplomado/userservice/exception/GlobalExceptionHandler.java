@@ -22,7 +22,7 @@ public class GlobalExceptionHandler {
   @ExceptionHandler( value = { BadRequestException.class })
   @ResponseStatus(HttpStatus.BAD_REQUEST)
   public ResponseEntity<CommonResponse> badRequestException (BadRequestException ex){
-    return new ResponseEntity<>( new CommonResponse("401", ex.getMessage()),
+    return new ResponseEntity<>( new CommonResponse("400", ex.getMessage()),
     new HttpHeaders(),
     HttpStatus.BAD_REQUEST
     );
@@ -31,7 +31,7 @@ public class GlobalExceptionHandler {
   @ExceptionHandler({ApplicationException.class})
   public ResponseEntity<ErrorResponse> handleApplicationException(ApplicationException source,
                                                                   WebRequest request) {
-    ErrorResponse errorInfo = new ErrorResponse( "402", source.getMessage(),
+    ErrorResponse errorInfo = new ErrorResponse( "400", source.getMessage(),
     ((ServletWebRequest) request ).getRequest().getRequestURI());
     return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorInfo);
   }

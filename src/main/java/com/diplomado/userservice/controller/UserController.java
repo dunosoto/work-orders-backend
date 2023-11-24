@@ -25,7 +25,7 @@ public class UserController {
   private UpdateUserNameUseCase updateUserNameUseCase;
   @PostMapping(params = {"details"})
   public CreateUserResponse saveUser(@RequestBody @Valid CreateUserRequest request,
-                                     @RequestParam(value = "details", required = false, defaultValue = "true") boolean details) {
+                                     @RequestParam(value = "details", required = false) boolean details) {
     return createUserUseCase.execute(request, details);
   }
   
