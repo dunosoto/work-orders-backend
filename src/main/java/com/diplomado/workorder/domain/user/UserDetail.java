@@ -1,4 +1,4 @@
-package com.diplomado.workorder.domain;
+package com.diplomado.workorder.domain.user;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;

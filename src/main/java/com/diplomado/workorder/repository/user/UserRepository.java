@@ -1,6 +1,6 @@
-package com.diplomado.workorder.repository;
+package com.diplomado.workorder.repository.user;
 
-import com.diplomado.workorder.domain.User;
+import com.diplomado.workorder.domain.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

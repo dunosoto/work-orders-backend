@@ -4,7 +4,7 @@ package com.diplomado.workorder.mapper;
 import com.diplomado.workorder.api.dto.user.UserDetailDto;
 import com.diplomado.workorder.api.request.user.CreateUserRequest;
 import com.diplomado.workorder.api.request.user.UpdateUserRequest;
-import com.diplomado.workorder.domain.UserDetail;
+import com.diplomado.workorder.domain.user.UserDetail;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")

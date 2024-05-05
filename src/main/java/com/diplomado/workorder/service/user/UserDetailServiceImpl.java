@@ -1,7 +1,7 @@
-package com.diplomado.workorder.service;
+package com.diplomado.workorder.service.user;
 
-import com.diplomado.workorder.domain.UserDetail;
-import com.diplomado.workorder.repository.UserDetailRepository;
+import com.diplomado.workorder.domain.user.UserDetail;
+import com.diplomado.workorder.repository.user.UserDetailRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

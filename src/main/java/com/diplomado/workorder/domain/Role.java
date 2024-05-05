@@ -1,5 +1,6 @@
 package com.diplomado.workorder.domain;
 
+import com.diplomado.workorder.domain.user.UserRole;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

@@ -6,7 +6,7 @@ import com.diplomado.workorder.common.Message;
 import com.diplomado.workorder.domain.Role;
 import com.diplomado.workorder.exception.NotFoundRoleException;
 import com.diplomado.workorder.mapper.RoleMapper;
-import com.diplomado.workorder.service.IRoleService;
+import com.diplomado.workorder.service.role.IRoleService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

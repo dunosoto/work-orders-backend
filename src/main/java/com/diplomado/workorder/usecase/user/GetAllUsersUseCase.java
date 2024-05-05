@@ -3,9 +3,9 @@ package com.diplomado.workorder.usecase.user;
 
 import com.diplomado.workorder.api.dto.user.UserDto;
 import com.diplomado.workorder.api.response.user.UserListResponse;
-import com.diplomado.workorder.domain.User;
+import com.diplomado.workorder.domain.user.User;
 import com.diplomado.workorder.mapper.UserMapper;
-import com.diplomado.workorder.service.IUserService;
+import com.diplomado.workorder.service.user.IUserService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
