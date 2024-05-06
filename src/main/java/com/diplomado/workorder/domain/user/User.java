@@ -1,4 +1,4 @@
-package com.diplomado.workorder.domain;
+package com.diplomado.workorder.domain.user;
 
 import java.util.Date;
 import java.util.List;
@@ -35,4 +35,7 @@ public class User {
   
   @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
   private List<UserRole> userRoles;
+  
+  @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE, fetch = FetchType.LAZY, orphanRemoval = true)
+  private List<UserGroup> groups;
 }

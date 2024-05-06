@@ -1,6 +1,6 @@
-package com.diplomado.workorder.service;
+package com.diplomado.workorder.service.user;
 
-import com.diplomado.workorder.domain.UserRole;
+import com.diplomado.workorder.domain.user.UserRole;
 
 import java.util.List;
 import java.util.Optional;

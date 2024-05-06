@@ -1,4 +1,4 @@
-package com.diplomado.workorder.service;
+package com.diplomado.workorder.service.role;
 
 import com.diplomado.workorder.domain.Role;
 import com.diplomado.workorder.repository.RoleRepository;

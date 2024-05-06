@@ -5,8 +5,8 @@ import com.diplomado.workorder.api.dto.user.UserDetailDto;
 import com.diplomado.workorder.api.dto.user.UserDto;
 import com.diplomado.workorder.api.request.user.CreateUserRequest;
 import com.diplomado.workorder.api.request.user.UpdateUserRequest;
-import com.diplomado.workorder.domain.User;
-import com.diplomado.workorder.domain.UserDetail;
+import com.diplomado.workorder.domain.user.User;
+import com.diplomado.workorder.domain.user.UserDetail;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

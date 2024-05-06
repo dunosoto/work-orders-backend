@@ -4,7 +4,7 @@ import com.diplomado.workorder.api.dto.role.RoleDto;
 import com.diplomado.workorder.api.response.role.RoleListResponse;
 import com.diplomado.workorder.domain.Role;
 import com.diplomado.workorder.mapper.RoleMapper;
-import com.diplomado.workorder.service.IRoleService;
+import com.diplomado.workorder.service.role.IRoleService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
