@@ -1,4 +1,4 @@
-package com.diplomado.workorder.controller;
+package com.diplomado.workorder.controller.user;
 
 
 import com.diplomado.workorder.api.request.userrole.UpdateActiveRequest;

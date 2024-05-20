@@ -3,7 +3,7 @@ package com.diplomado.workorder.usecase.group;
 import com.diplomado.workorder.api.response.group.GroupResponse;
 import com.diplomado.workorder.common.Message;
 import com.diplomado.workorder.domain.group.Group;
-import com.diplomado.workorder.exception.NotFoundUserException;
+import com.diplomado.workorder.exception.user.NotFoundUserException;
 import com.diplomado.workorder.mapper.GroupMapper;
 import com.diplomado.workorder.service.group.IGroupService;
 import com.diplomado.workorder.usecase.BusinessLogicCommand;
