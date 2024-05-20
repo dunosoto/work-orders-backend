@@ -7,7 +7,7 @@ import com.diplomado.workorder.common.Message;
 import com.diplomado.workorder.domain.Role;
 import com.diplomado.workorder.domain.user.User;
 import com.diplomado.workorder.domain.user.UserRole;
-import com.diplomado.workorder.exception.NotFoundUserException;
+import com.diplomado.workorder.exception.user.NotFoundUserException;
 import com.diplomado.workorder.mapper.RoleMapper;
 import com.diplomado.workorder.mapper.UserDetailMapper;
 import com.diplomado.workorder.mapper.UserMapper;

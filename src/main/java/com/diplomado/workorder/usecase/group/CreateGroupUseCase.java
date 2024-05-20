@@ -5,7 +5,7 @@ import com.diplomado.workorder.api.response.group.CreateGroupResponse;
 import com.diplomado.workorder.domain.group.Group;
 import com.diplomado.workorder.domain.user.User;
 import com.diplomado.workorder.domain.user.UserGroup;
-import com.diplomado.workorder.exception.NotFoundRoleException;
+import com.diplomado.workorder.exception.role.NotFoundRoleException;
 import com.diplomado.workorder.mapper.GroupMapper;
 import com.diplomado.workorder.service.group.IGroupService;
 import com.diplomado.workorder.service.user.IUserGroupService;

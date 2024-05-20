@@ -5,7 +5,7 @@ import com.diplomado.workorder.api.request.user.UpdateUserRequest;
 import com.diplomado.workorder.api.response.user.UserResponse;
 import com.diplomado.workorder.common.Message;
 import com.diplomado.workorder.domain.user.User;
-import com.diplomado.workorder.exception.NotFoundUserException;
+import com.diplomado.workorder.exception.user.NotFoundUserException;
 import com.diplomado.workorder.mapper.UserMapper;
 import com.diplomado.workorder.service.user.IUserService;
 import lombok.AllArgsConstructor;

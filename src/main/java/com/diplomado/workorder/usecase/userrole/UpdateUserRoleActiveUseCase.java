@@ -5,7 +5,7 @@ import com.diplomado.workorder.api.request.userrole.UpdateActiveRequest;
 import com.diplomado.workorder.api.response.userrole.UserRoleResponse;
 import com.diplomado.workorder.common.Message;
 import com.diplomado.workorder.domain.user.UserRole;
-import com.diplomado.workorder.exception.NotFoundUserRoleException;
+import com.diplomado.workorder.exception.user.NotFoundUserRoleException;
 import com.diplomado.workorder.service.user.IUserRoleService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

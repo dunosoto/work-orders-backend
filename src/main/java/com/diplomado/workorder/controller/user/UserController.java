@@ -1,4 +1,4 @@
-package com.diplomado.workorder.controller;
+package com.diplomado.workorder.controller.user;
 
 
 import com.diplomado.workorder.api.request.user.CreateUserRequest;
@@ -23,6 +23,7 @@ public class UserController {
   private UpdateUserUseCase updateUserUseCase;
   private DeleteUserUseCase deleteUserUseCase;
   private UpdateUserNameUseCase updateUserNameUseCase;
+
   @PostMapping(params = {"details"})
   public CreateUserResponse saveUser(@RequestBody @Valid CreateUserRequest request,
                                      @RequestParam(value = "details", required = false) boolean details) {

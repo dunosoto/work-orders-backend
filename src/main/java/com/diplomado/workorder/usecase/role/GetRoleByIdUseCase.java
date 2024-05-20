@@ -4,7 +4,7 @@ package com.diplomado.workorder.usecase.role;
 import com.diplomado.workorder.api.response.role.RoleResponse;
 import com.diplomado.workorder.common.Message;
 import com.diplomado.workorder.domain.Role;
-import com.diplomado.workorder.exception.NotFoundRoleException;
+import com.diplomado.workorder.exception.role.NotFoundRoleException;
 import com.diplomado.workorder.mapper.RoleMapper;
 import com.diplomado.workorder.service.role.IRoleService;
 import lombok.AllArgsConstructor;

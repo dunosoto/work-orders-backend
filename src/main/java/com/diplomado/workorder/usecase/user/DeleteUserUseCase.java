@@ -3,7 +3,7 @@ package com.diplomado.workorder.usecase.user;
 
 import com.diplomado.workorder.common.Message;
 import com.diplomado.workorder.domain.user.User;
-import com.diplomado.workorder.exception.NotFoundUserException;
+import com.diplomado.workorder.exception.user.NotFoundUserException;
 import com.diplomado.workorder.service.user.IUserService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
