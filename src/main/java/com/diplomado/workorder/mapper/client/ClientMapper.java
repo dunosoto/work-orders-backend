@@ -1,6 +1,6 @@
 package com.diplomado.workorder.mapper.client;
 
-import com.diplomado.workorder.api.dto.client.AddressDto;
+import com.diplomado.workorder.api.dto.address.AddressDto;
 import com.diplomado.workorder.api.dto.client.ClientDetailDto;
 import com.diplomado.workorder.api.dto.client.ClientDto;
 import com.diplomado.workorder.api.request.client.CreateClientRequest;

@@ -1,6 +1,6 @@
 package com.diplomado.workorder.usecase.client;
 
-import com.diplomado.workorder.api.dto.client.AddressDto;
+import com.diplomado.workorder.api.dto.address.AddressDto;
 import com.diplomado.workorder.api.response.client.GetClientByIdResponse;
 import com.diplomado.workorder.common.Message;
 import com.diplomado.workorder.domain.client.Address;

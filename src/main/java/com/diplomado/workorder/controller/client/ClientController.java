@@ -1,5 +1,6 @@
 package com.diplomado.workorder.controller.client;
 
+import com.diplomado.workorder.api.request.address.CreateAddressRequest;
 import com.diplomado.workorder.api.request.client.CreateClientRequest;
 import com.diplomado.workorder.api.request.client.UpdateClientRequest;
 import com.diplomado.workorder.api.response.client.ClientListResponse;
@@ -8,6 +9,7 @@ import com.diplomado.workorder.api.response.client.GetClientByIdResponse;
 import com.diplomado.workorder.api.response.client.UpdateClientResponse;
 import com.diplomado.workorder.usecase.client.CreateClientUseCase;
 import com.diplomado.workorder.usecase.client.GetAllClientsUseCase;
+import com.diplomado.workorder.usecase.client.GetClientByIdUseCase;
 import com.diplomado.workorder.usecase.client.UpdateClientUseCase;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -42,10 +44,16 @@ public class ClientController {
   
   @PutMapping("/{id}")
   public UpdateClientResponse updateClient(@RequestBody @Valid UpdateClientRequest request, @PathVariable("id") UUID clientId) {
-    this.updateClientUseCase.execute(request, clientId);
+    return this.updateClientUseCase.execute(request, clientId);
   }
 
   @DeleteMapping("/{id}")
   public void deleteClient(@PathVariable("id") UUID clientId) {}
 
+  //save a new address to client.
+  @PostMapping("/{uuid}/address")
+  public void saveAddress(@RequestBody @Valid CreateAddressRequest request, @PathVariable("uuid") UUID clientId ) {
+  
+  }
+  
 }

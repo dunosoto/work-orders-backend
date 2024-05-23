@@ -24,7 +24,13 @@ public class Address {
 
   @Column(length = 30, nullable = false)
   private String city;
+  
+  @Column(length = 30, nullable = false)
+  private String direction;
 
+  @Column(length = 50, nullable = false)
+  private String description;
+  
   private boolean actived = true;
 
   @ManyToOne
