@@ -34,7 +34,7 @@ public class Client {
   @Column(length = 20)
   private String identityCard;
 
-  private boolean actived = true;
+  private boolean activated = true;
 
   @CreationTimestamp
   private Instant createdAt;

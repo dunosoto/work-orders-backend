@@ -16,8 +16,9 @@ public class ClientDto {
   private String lastName;
   private String cellphone;
   private String identityCard;
-  private boolean actived;
+  private boolean activated;
   private Instant createdAt;
   private Date updatedAt;
 
 }
+

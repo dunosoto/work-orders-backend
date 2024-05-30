@@ -14,7 +14,7 @@ public class AddressDto {
   private String longitude;
   private String location;
   private String city;
-  private boolean actived;
+  private boolean activated;
   private String direction;
   private String description;
 }

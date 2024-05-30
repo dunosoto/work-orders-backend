@@ -1,9 +1,11 @@
 package com.diplomado.workorder.domain.client;
 
+import com.diplomado.workorder.domain.assistance.Assistance;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
 import java.util.UUID;
 
 @Getter
@@ -31,9 +33,14 @@ public class Address {
   @Column(length = 50, nullable = false)
   private String description;
   
-  private boolean actived = true;
+  private boolean activated = true;
 
   @ManyToOne
   @JoinColumn(name = "client_id", nullable = false)
   private Client client;
+  
+  //TODO: INCLUDE CREATED_AT AND UPDATED_AT COLUMNS
+  
+  @OneToMany(mappedBy = "address", cascade = CascadeType.REMOVE, orphanRemoval = true)
+  private List<Assistance> services;
 }
