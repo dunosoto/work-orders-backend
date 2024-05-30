@@ -1,6 +1,6 @@
 package com.diplomado.workorder.domain.assistance;
 
-import com.diplomado.workorder.domain.client.Address;
+
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -9,20 +9,32 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.Instant;
 import java.util.Date;
-import java.util.List;
 import java.util.UUID;
 
 @Getter
 @Setter
 @Entity
-@Table(name = "services")
-public class Assistance {
+@Table(name = "technicals_information")
+public class TechnicalInformation {
   
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
   private UUID id;
   
-  private boolean activated = true;
+  @Column(length = 20)
+  private String olt;
+  
+  @Column(length = 10, name = "olt_ip")
+  private String oltIp;
+  
+  @Column(length = 10, name = "gpon_port")
+  private String gponPort;
+  
+  @Column(length = 10, name = "mdu_ip")
+  private String mduIp;
+  
+  @Column(length = 10, name = "mdu_port")
+  private String mduPort;
   
   @CreationTimestamp
   private Instant createdAt;
@@ -31,13 +43,7 @@ public class Assistance {
   private Date updatedAt;
   
   @ManyToOne
-  @JoinColumn(name = "address_id", nullable = false)
-  private Address address;
+  @JoinColumn(name = "service_id", nullable = false)
+  private Assistance assistance;
   
-  @ManyToOne
-  @JoinColumn(name = "type_id", nullable = false)
-  private AssistanceType assistanceType;
-  
-  @OneToMany(mappedBy = "assistance", cascade = CascadeType.REMOVE, orphanRemoval = true)
-  private List<TechnicalInformation> technicalInformationList;
 }
