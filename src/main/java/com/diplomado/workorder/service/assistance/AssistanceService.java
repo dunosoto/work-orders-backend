@@ -13,25 +13,25 @@ import java.util.UUID;
 @AllArgsConstructor
 public class AssistanceService implements IAssistanceService {
 
-  private AssistanceRepository asistenceRepository;
+  private AssistanceRepository assistanceRepository;
 
   @Override
   public Assistance save(Assistance assistance) {
-    return this.asistenceRepository.save(assistance);
+    return this.assistanceRepository.save(assistance);
   }
 
   @Override
   public List<Assistance> getAll() {
-    return this.asistenceRepository.findAll();
+    return this.assistanceRepository.findAll();
   }
 
   @Override
   public Optional<Assistance> findById(UUID uuid) {
-    return this.asistenceRepository.findById(uuid);
+    return this.assistanceRepository.findById(uuid);
   }
 
   @Override
   public Assistance update(Assistance assistance) {
-    return this.asistenceRepository.save(assistance);
+    return this.assistanceRepository.save(assistance);
   }
 }

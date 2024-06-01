@@ -14,9 +14,9 @@ import java.util.UUID;
 public class AssistanceDto {
   
   private UUID id;
+  private AssistanceType assistanceType;
   private boolean activated;
   private Instant createdAt;
   private Date updatedAt;
   private Address address;
-  private AssistanceType assistanceType;
 }

@@ -8,9 +8,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class GroupDto {
+public class GroupDto extends BaseGroupDto {
   
-  private Long id;
-  private String prefix;
   private List<User> members;
 }
