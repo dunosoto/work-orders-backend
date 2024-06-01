@@ -1,6 +1,7 @@
 package com.diplomado.workorder.domain.assistance;
 
 import com.diplomado.workorder.domain.client.Address;
+import com.diplomado.workorder.domain.template.Template;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -40,4 +41,8 @@ public class Assistance {
   
   @OneToMany(mappedBy = "assistance", cascade = CascadeType.REMOVE, orphanRemoval = true)
   private List<TechnicalInformation> technicalInformationList;
+  
+  @OneToMany(mappedBy = "assistance", cascade = CascadeType.REMOVE, orphanRemoval = true)
+  private List<Template> workOrders;
+  
 }

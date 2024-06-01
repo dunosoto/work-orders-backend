@@ -1,5 +1,6 @@
 package com.diplomado.workorder.domain.group;
 
+import com.diplomado.workorder.domain.template.Template;
 import com.diplomado.workorder.domain.user.UserGroup;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -14,7 +15,6 @@ import java.util.List;
 @Table(name = "groups")
 public class Group {
   
-  
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
@@ -28,4 +28,7 @@ public class Group {
   
   @OneToMany(mappedBy = "group", cascade = CascadeType.REMOVE, orphanRemoval = true)
   private List<UserGroup> members;
+
+  @OneToMany(mappedBy = "group", cascade = CascadeType.REMOVE, orphanRemoval = true)
+  private List<Template> workOrders;
 }
