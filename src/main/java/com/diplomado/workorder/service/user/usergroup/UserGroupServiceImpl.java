@@ -1,4 +1,4 @@
-package com.diplomado.workorder.service.user;
+package com.diplomado.workorder.service.user.usergroup;
 
 import com.diplomado.workorder.domain.user.UserGroup;
 import com.diplomado.workorder.repository.user.UserGroupRepository;

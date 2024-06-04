@@ -13,8 +13,10 @@ public class CreateRoleResponse extends CommonResponse {
   private RoleDto role;
   
   public CreateRoleResponse(RoleDto role) {
-    super(ResponseConstant.StatusCodeResponse.SUCCESS_CODE, ResponseConstant.StatusCodeResponse.SUCCESS_MSG);
+    super(
+      ResponseConstant.StatusCodeResponse.CREATED_CODE,
+      ResponseConstant.StatusCodeResponse.CREATED_SUCCESS_MSG
+    );
     this.role = role;
   }
-  
 }

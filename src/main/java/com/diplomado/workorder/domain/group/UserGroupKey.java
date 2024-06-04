@@ -1,7 +1,6 @@
 package com.diplomado.workorder.domain.group;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Embeddable;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,6 +10,10 @@ import java.io.Serializable;
 @Setter
 @Embeddable
 public class UserGroupKey implements Serializable {
+  
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
   @Column(name = "user_id")
   private Long userId;

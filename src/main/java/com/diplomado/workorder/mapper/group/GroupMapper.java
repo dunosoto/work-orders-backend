@@ -1,4 +1,4 @@
-package com.diplomado.workorder.mapper;
+package com.diplomado.workorder.mapper.group;
 
 import com.diplomado.workorder.api.dto.group.GroupDto;
 import com.diplomado.workorder.api.request.group.CreateGroupRequest;

@@ -1,17 +1,17 @@
 package com.diplomado.workorder.service.role;
 
-import com.diplomado.workorder.domain.Role;
-import com.diplomado.workorder.repository.RoleRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.diplomado.workorder.domain.role.Role;
+import com.diplomado.workorder.repository.role.RoleRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@AllArgsConstructor
 public class RoleServiceImpl implements IRoleService {
 
-  @Autowired
   private RoleRepository roleRepository;
   
   @Override
@@ -38,5 +38,4 @@ public class RoleServiceImpl implements IRoleService {
   public void deleteById(Long id) {
     roleRepository.deleteById(id);
   }
-
 }

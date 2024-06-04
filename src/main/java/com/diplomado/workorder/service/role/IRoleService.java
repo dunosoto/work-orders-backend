@@ -1,14 +1,9 @@
 package com.diplomado.workorder.service.role;
 
-import com.diplomado.workorder.domain.Role;
-import java.util.List;
-import java.util.Optional;
+import com.diplomado.workorder.domain.role.Role;
+import com.diplomado.workorder.service.BusinessServiceCommand;
 
-public interface IRoleService {
+public interface IRoleService extends BusinessServiceCommand<Role, Long> {
   
-  Role save(Role role);
-  List<Role> getAll();
-  Optional<Role> findById(Long id);
-  Role update(Role role);
   void deleteById(Long id);
 }

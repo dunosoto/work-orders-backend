@@ -2,7 +2,7 @@ package com.diplomado.workorder.usecase.group;
 
 import com.diplomado.workorder.api.response.group.GroupResponse;
 import com.diplomado.workorder.domain.group.Group;
-import com.diplomado.workorder.mapper.GroupMapper;
+import com.diplomado.workorder.mapper.group.GroupMapper;
 import com.diplomado.workorder.usecase.BusinessLogicCommand;
 import com.diplomado.workorder.usecase.group.util.GroupValidatorUtil;
 import lombok.AllArgsConstructor;

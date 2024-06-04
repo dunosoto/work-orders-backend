@@ -12,7 +12,7 @@ import lombok.Setter;
 public class UserResponse extends CommonResponse {
   
   private UserDto user;
-  
+
   public UserResponse(UserDto user) {
     super(ResponseConstant.StatusCodeResponse.SUCCESS_CODE, ResponseConstant.StatusCodeResponse.SUCCESS_MSG);
     this.user = user;

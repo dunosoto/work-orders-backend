@@ -16,7 +16,9 @@ public class RoleListResponse extends CommonResponse {
   private List<RoleDto> roles;
   
   public RoleListResponse(List<RoleDto> roleList) {
-    super(ResponseConstant.StatusCodeResponse.SUCCESS_CODE, ResponseConstant.StatusCodeResponse.SUCCESS_MSG);
+    super(
+      ResponseConstant.StatusCodeResponse.SUCCESS_CODE,
+    ResponseConstant.StatusCodeResponse.GET_ALL_SUCCESS_MSG);
     this.roles = roleList;
   }
 }
