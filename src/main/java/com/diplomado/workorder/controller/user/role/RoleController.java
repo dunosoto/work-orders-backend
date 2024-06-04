@@ -1,4 +1,4 @@
-package com.diplomado.workorder.controller;
+package com.diplomado.workorder.controller.user.role;
 
 import com.diplomado.workorder.api.request.role.CreateRoleRequest;
 import com.diplomado.workorder.api.request.role.UpdateRoleRequest;
@@ -7,15 +7,13 @@ import com.diplomado.workorder.api.response.role.RoleListResponse;
 import com.diplomado.workorder.api.response.role.RoleResponse;
 import com.diplomado.workorder.usecase.role.*;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("roles")
 @AllArgsConstructor
 public class RoleController {
-  
-  @Autowired
+
   private CreateRoleUseCase createRoleUseCase;
   private GetAllRolesUseCase getAllRolesUseCase;
   private GetRoleByIdUseCase getRoleByIdUseCase;
@@ -46,5 +44,4 @@ public class RoleController {
   public void deleteRole(@PathVariable("id") Long roleId) {
     deleteRoleUseCase.execute(roleId);
   }
-  
 }

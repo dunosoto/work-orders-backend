@@ -1,12 +1,15 @@
 package com.diplomado.workorder.domain.user;
 
+import java.time.Instant;
 import java.util.Date;
 import java.util.List;
 
+import com.diplomado.workorder.domain.role.Role;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 @Getter
 @Setter
@@ -18,23 +21,28 @@ public class User {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   
-  @Column(length = 150, nullable = false)
-  private String userName;
+  @Column(length = 100, nullable = false)
+  private String firstName;
   
+  @Column(length = 100, nullable = false)
+  private String lastName;
+
   @Column(length = 150, nullable = false)
   private String password;
   
   @Column(length = 150, nullable = false)
   private String email;
   
-  @Temporal(TemporalType.TIMESTAMP)
-  private Date createdAt;
+//  @Temporal(TemporalType.TIMESTAMP)
+  @CreationTimestamp
+  private Instant createdAt;
   
-  @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
-  private UserDetail userDetail;
+  @UpdateTimestamp
+  private Date updatedAt;
   
-  @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
-  private List<UserRole> userRoles;
+  @ManyToOne
+  @JoinColumn(name = "role_id")
+  private Role role;
   
   @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE, fetch = FetchType.LAZY, orphanRemoval = true)
   private List<UserGroup> groups;
