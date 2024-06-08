@@ -8,8 +8,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class CommonResponse {
-  
-  private String statusCode;
+public class CommonResponse<T> {
+  private boolean status;
   private String message;
+  private T data;
 }

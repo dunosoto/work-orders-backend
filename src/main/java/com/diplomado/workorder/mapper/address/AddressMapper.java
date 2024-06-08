@@ -13,7 +13,7 @@ public interface AddressMapper {
   
   AddressDto addressToAddressDto(Address address);
   
-  @Mapping(target = "Address.client", source = "java(client)")
+  @Mapping(target = "Address.client", expression = "java(client)")
   Address createAddressRequestToAddress(CreateAddressRequest request, Client client);
 
 }

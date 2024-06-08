@@ -8,12 +8,13 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class CreateUserResponse extends CommonResponse {
-  
-  private UserDto user;
+public class CreateUserResponse extends CommonResponse<UserDto> {
   
   public CreateUserResponse(UserDto user) {
-    super(ResponseConstant.StatusCodeResponse.SUCCESS_CODE, ResponseConstant.StatusCodeResponse.SUCCESS_MSG);
-    this.user = user;
+    super(
+      ResponseConstant.StatusCodeResponse.SUCCESS_STATUS,
+      ResponseConstant.StatusCodeResponse.SUCCESS_MSG,
+      user
+    );
   }
 }

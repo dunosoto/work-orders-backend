@@ -10,15 +10,13 @@ import java.util.List;
 
 @Getter
 @Setter
-public class ClientListResponse extends CommonResponse {
+public class ClientListResponse extends CommonResponse<List<ClientDto>> {
 
-  private List<ClientDto> clientDtoList;
-  
   public ClientListResponse(List<ClientDto> clientDtolist) {
     super(
-    ResponseConstant.StatusCodeResponse.SUCCESS_CODE,
-    ResponseConstant.StatusCodeResponse.SUCCESS_MSG
+      ResponseConstant.StatusCodeResponse.SUCCESS_STATUS,
+      ResponseConstant.StatusCodeResponse.SUCCESS_MSG,
+      clientDtolist
     );
-    this.clientDtoList = clientDtolist;
   }
 }

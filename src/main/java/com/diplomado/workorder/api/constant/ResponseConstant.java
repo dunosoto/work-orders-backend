@@ -6,6 +6,7 @@ public class ResponseConstant {
 
     //CODE RESPONSE
     public static final String SUCCESS_CODE = "200";
+    public static final boolean SUCCESS_STATUS = true;
     public static final String CREATED_CODE = "201";
     
     //MESSAGES

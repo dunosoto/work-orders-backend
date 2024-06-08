@@ -14,12 +14,14 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring")
 public interface TemplateMapper {
   
-  @Mapping(target = "Template.assistance", source = "java(assistance)")
-  @Mapping(target = "Template.group", source = "java(group)")
+  @Mapping(target = "Template.assistance", expression = "java(assistance)")
+  @Mapping(target = "Template.group", expression = "java(group)")
+  @Mapping(target = "id", ignore = true)
+  @Mapping(target = "createdAt", ignore = true)
   Template createTemplateRequestToTemplate(CreateTemplateRequest request, Assistance assistance, Group group);
   
-  @Mapping(target = "TemplateDto.group.id", source = "java(template.getGroup().getId())")
-  @Mapping(target = "TemplateDto.group.prefix", source = "java(template.getGroup().getPrefix())")
+  @Mapping(target = "TemplateDto.group.id", expression = "java(template.getGroup().getId())")
+  @Mapping(target = "TemplateDto.group.prefix", expression = "java(template.getGroup().getPrefix())")
   TemplateDto templateToTemplateDto(Template template);
   
 

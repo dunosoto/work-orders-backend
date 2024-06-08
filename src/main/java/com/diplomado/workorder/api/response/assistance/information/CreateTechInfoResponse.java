@@ -8,15 +8,13 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class CreateTechInfoResponse extends CommonResponse {
-
-  private TechInfoDto techInfoDto;
+public class CreateTechInfoResponse extends CommonResponse<TechInfoDto> {
   
   public CreateTechInfoResponse(TechInfoDto techInfoDto) {
     super(
-      ResponseConstant.StatusCodeResponse.CREATED_CODE,
-      ResponseConstant.StatusCodeResponse.SUCCESS_MSG
+      ResponseConstant.StatusCodeResponse.SUCCESS_STATUS,
+      ResponseConstant.StatusCodeResponse.SUCCESS_MSG,
+      techInfoDto
     );
-    this.techInfoDto = techInfoDto;
   }
 }

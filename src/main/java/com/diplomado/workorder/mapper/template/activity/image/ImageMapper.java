@@ -10,11 +10,11 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring")
 public interface ImageMapper {
 
-  @Mapping(target = "activity", source = "java(activity)")
+  @Mapping(target = "activity", expression = "java(activity)")
   Image createImageRequestToImage(CreateImageRequest request, Activity activity);
 
   
-  @Mapping(target = "activityId", source = "java(image.getActivity().getId())")
+  @Mapping(target = "activityId", expression = "java(image.getActivity().getId())")
   ImageDto imageToImageDto(Image image);
 
 }

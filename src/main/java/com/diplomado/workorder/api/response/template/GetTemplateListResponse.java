@@ -10,15 +10,13 @@ import java.util.List;
 
 @Getter
 @Setter
-public class GetTemplateListResponse extends CommonResponse {
+public class GetTemplateListResponse extends CommonResponse<List<TemplateDto>> {
 
-  private List<TemplateDto> templateDtoList;
-  
   public GetTemplateListResponse(List<TemplateDto> templateDtoList) {
     super(
-      ResponseConstant.StatusCodeResponse.SUCCESS_CODE,
-      ResponseConstant.StatusCodeResponse.SUCCESS_MSG
+      ResponseConstant.StatusCodeResponse.SUCCESS_STATUS,
+      ResponseConstant.StatusCodeResponse.SUCCESS_MSG,
+      templateDtoList
     );
-    this.templateDtoList = templateDtoList;
   }
 }

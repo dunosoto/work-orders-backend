@@ -8,15 +8,13 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class UpdateActivityResponse extends CommonResponse {
-  
-  private ActivityDto activityDto;
+public class UpdateActivityResponse extends CommonResponse<ActivityDto> {
   
   public UpdateActivityResponse(ActivityDto activityDto) {
     super(
-    ResponseConstant.StatusCodeResponse.SUCCESS_CODE,
-    ResponseConstant.StatusCodeResponse.UPDATED_SUCCESS_MSG
+    ResponseConstant.StatusCodeResponse.SUCCESS_STATUS,
+    ResponseConstant.StatusCodeResponse.UPDATED_SUCCESS_MSG,
+      activityDto
     );
-    this.activityDto = activityDto;
   }
 }

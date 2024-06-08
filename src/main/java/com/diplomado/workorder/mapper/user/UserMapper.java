@@ -12,7 +12,7 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring")
 public interface UserMapper {
 
-  @Mapping(target = "role", source = "java(role)")
+  @Mapping(target = "role", expression = "java(role)")
   User createUserRequestToUser(CreateUserRequest request, Role role);
   
   @Mapping(target = "role", expression = "java(roleDto)")

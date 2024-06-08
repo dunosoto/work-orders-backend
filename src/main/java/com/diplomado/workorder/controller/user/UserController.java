@@ -22,8 +22,8 @@ public class UserController {
   private UpdateUserUseCase updateUserUseCase;
   private DeleteUserUseCase deleteUserUseCase;
 
-  @PostMapping()
-  public CreateUserResponse saveUser(@RequestBody @Valid CreateUserRequest request) {
+  @PostMapping("/create")
+  public CreateUserResponse createUser(@RequestBody CreateUserRequest request) {
     return createUserUseCase.execute(request);
   }
 

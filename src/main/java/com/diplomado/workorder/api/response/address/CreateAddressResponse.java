@@ -9,15 +9,13 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class CreateAddressResponse extends CommonResponse {
-  
-  private AddressDto addressDto;
+public class CreateAddressResponse extends CommonResponse<AddressDto> {
   
   public CreateAddressResponse(AddressDto addressDto) {
     super(
-    ResponseConstant.StatusCodeResponse.CREATED_CODE,
-    ResponseConstant.StatusCodeResponse.SUCCESS_MSG
+      ResponseConstant.StatusCodeResponse.SUCCESS_STATUS,
+      ResponseConstant.StatusCodeResponse.SUCCESS_MSG,
+      addressDto
     );
-    this.addressDto = addressDto;
   }
 }

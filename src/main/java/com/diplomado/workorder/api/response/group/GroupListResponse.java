@@ -10,14 +10,13 @@ import java.util.List;
 
 @Getter
 @Setter
-public class GroupListResponse extends CommonResponse {
+public class GroupListResponse extends CommonResponse<List<GroupDto>> {
 
-  private List<GroupDto> groups;
-  
   public GroupListResponse(List<GroupDto> groupList) {
-    super(ResponseConstant.StatusCodeResponse.SUCCESS_CODE, ResponseConstant.StatusCodeResponse.SUCCESS_MSG);
-    this.groups = groupList;
+    super(
+      ResponseConstant.StatusCodeResponse.SUCCESS_STATUS,
+      ResponseConstant.StatusCodeResponse.SUCCESS_MSG,
+      groupList
+    );
   }
-  
-  
 }

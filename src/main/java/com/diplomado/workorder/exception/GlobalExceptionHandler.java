@@ -22,7 +22,7 @@ public class GlobalExceptionHandler {
   @ExceptionHandler( value = { BadRequestException.class })
   @ResponseStatus(HttpStatus.BAD_REQUEST)
   public ResponseEntity<CommonResponse> badRequestException (BadRequestException ex){
-    return new ResponseEntity<>( new CommonResponse("400", ex.getMessage()),
+    return new ResponseEntity<>( new CommonResponse(false, ex.getMessage(), false),
     new HttpHeaders(),
     HttpStatus.BAD_REQUEST
     );
