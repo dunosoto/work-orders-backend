@@ -8,15 +8,13 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class UpdateTemplateResponse extends CommonResponse {
+public class UpdateTemplateResponse extends CommonResponse<TemplateDto> {
 
-  private TemplateDto templateDto;
-  
   public UpdateTemplateResponse(TemplateDto templateDto) {
     super(
-      ResponseConstant.StatusCodeResponse.SUCCESS_CODE,
-      ResponseConstant.StatusCodeResponse.UPDATED_SUCCESS_MSG
+      ResponseConstant.StatusCodeResponse.SUCCESS_STATUS,
+      ResponseConstant.StatusCodeResponse.UPDATED_SUCCESS_MSG,
+      templateDto
     );
-    this.templateDto = templateDto;
   }
 }

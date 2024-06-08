@@ -2,10 +2,14 @@ package com.diplomado.workorder.service.user.usergroup;
 
 import com.diplomado.workorder.domain.user.UserGroup;
 import com.diplomado.workorder.repository.user.UserGroupRepository;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
+@AllArgsConstructor
 public class UserGroupServiceImpl implements IUserGroupService {
   
   private UserGroupRepository userGroupRepository;

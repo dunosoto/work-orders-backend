@@ -8,15 +8,13 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class CreateAssistanceResponse extends CommonResponse {
+public class CreateAssistanceResponse extends CommonResponse<AssistanceDto> {
 
-  private AssistanceDto assistanceDto;
-  
   public CreateAssistanceResponse(AssistanceDto assistanceDto) {
     super(
-      ResponseConstant.StatusCodeResponse.CREATED_CODE,
-      ResponseConstant.StatusCodeResponse.SUCCESS_MSG
+      ResponseConstant.StatusCodeResponse.SUCCESS_STATUS,
+      ResponseConstant.StatusCodeResponse.SUCCESS_MSG,
+      assistanceDto
     );
-    this.assistanceDto = assistanceDto;
   }
 }

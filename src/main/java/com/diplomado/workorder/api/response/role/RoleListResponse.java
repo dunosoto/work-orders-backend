@@ -11,14 +11,13 @@ import java.util.List;
 
 @Getter
 @Setter
-public class RoleListResponse extends CommonResponse {
-
-  private List<RoleDto> roles;
+public class RoleListResponse extends CommonResponse<List<RoleDto>> {
   
   public RoleListResponse(List<RoleDto> roleList) {
     super(
-      ResponseConstant.StatusCodeResponse.SUCCESS_CODE,
-    ResponseConstant.StatusCodeResponse.GET_ALL_SUCCESS_MSG);
-    this.roles = roleList;
+      ResponseConstant.StatusCodeResponse.SUCCESS_STATUS,
+      ResponseConstant.StatusCodeResponse.GET_ALL_SUCCESS_MSG,
+      roleList
+    );
   }
 }

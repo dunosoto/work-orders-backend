@@ -8,12 +8,13 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class CreateGroupResponse extends CommonResponse {
+public class CreateGroupResponse extends CommonResponse<GroupDto> {
 
-  private GroupDto group;
-  
   public CreateGroupResponse(GroupDto group) {
-    super(ResponseConstant.StatusCodeResponse.SUCCESS_CODE, ResponseConstant.StatusCodeResponse.SUCCESS_MSG);
-    this.group = group;
+    super(
+      ResponseConstant.StatusCodeResponse.SUCCESS_STATUS,
+      ResponseConstant.StatusCodeResponse.SUCCESS_MSG,
+      group
+    );
   }
 }

@@ -10,12 +10,13 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class GroupResponse extends CommonResponse {
-
-  private GroupDto groupDto;
+public class GroupResponse extends CommonResponse<GroupDto> {
   
   public GroupResponse(GroupDto groupDto) {
-    super(ResponseConstant.StatusCodeResponse.SUCCESS_CODE, ResponseConstant.StatusCodeResponse.SUCCESS_MSG);
-    this.groupDto = groupDto;
+    super(
+      ResponseConstant.StatusCodeResponse.SUCCESS_STATUS,
+      ResponseConstant.StatusCodeResponse.SUCCESS_MSG,
+      groupDto
+    );
   }
 }

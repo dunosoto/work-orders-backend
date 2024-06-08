@@ -19,6 +19,9 @@ public class Role {
   private Long id;
 
   @Column(length = 100, nullable = false)
+  private String prefix;
+
+  @Column(length = 100, nullable = false)
   private String name;
 
   @OneToMany(mappedBy = "role")

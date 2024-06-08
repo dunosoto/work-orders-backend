@@ -9,12 +9,13 @@ import java.util.List;
 
 @Getter
 @Setter
-public class UserListResponse extends CommonResponse {
-  
-  List<UserDto> userList;
+public class UserListResponse extends CommonResponse<List<UserDto>> {
   
   public UserListResponse(List<UserDto> userList) {
-    super(ResponseConstant.StatusCodeResponse.SUCCESS_CODE, ResponseConstant.StatusCodeResponse.SUCCESS_MSG);
-    this.userList = userList;
+    super(
+      ResponseConstant.StatusCodeResponse.SUCCESS_STATUS,
+      ResponseConstant.StatusCodeResponse.SUCCESS_MSG,
+      userList
+    );
   }
 }

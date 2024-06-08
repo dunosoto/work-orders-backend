@@ -13,7 +13,7 @@ public interface ActivityMapper {
   @Mapping(target = "workOrderId", source = "activity.workOrder.id")
   ActivityDto activityToActivityDto(Activity activity);
   
-  @Mapping(target = "workOrder", source = "java(template)")
+  @Mapping(target = "workOrder", expression = "java(template)")
   Activity createActivityRequestToActivity(CreateActivityRequest request, Template template);
 
 }

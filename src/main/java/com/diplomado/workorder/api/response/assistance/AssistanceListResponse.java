@@ -10,15 +10,13 @@ import java.util.List;
 
 @Getter
 @Setter
-public class AssistanceListResponse extends CommonResponse {
-  
-  private List<AssistanceDto> assistanceDtoList;
+public class AssistanceListResponse extends CommonResponse<List<AssistanceDto>> {
   
   public AssistanceListResponse(List<AssistanceDto> assistanceDtoList) {
     super(
-    ResponseConstant.StatusCodeResponse.SUCCESS_CODE,
-    ResponseConstant.StatusCodeResponse.SUCCESS_MSG
+      ResponseConstant.StatusCodeResponse.SUCCESS_STATUS,
+      ResponseConstant.StatusCodeResponse.SUCCESS_MSG,
+      assistanceDtoList
     );
-    this.assistanceDtoList = assistanceDtoList;
   }
 }

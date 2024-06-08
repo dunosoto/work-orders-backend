@@ -8,15 +8,13 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class CreateImageResponse extends CommonResponse {
-  
-  private ImageDto imageDto;
+public class CreateImageResponse extends CommonResponse<ImageDto> {
   
   public CreateImageResponse(ImageDto imageDto) {
     super(
-      ResponseConstant.StatusCodeResponse.CREATED_CODE,
-      ResponseConstant.StatusCodeResponse.CREATED_SUCCESS_MSG
+      ResponseConstant.StatusCodeResponse.SUCCESS_STATUS,
+      ResponseConstant.StatusCodeResponse.CREATED_SUCCESS_MSG,
+      imageDto
     );
-    this.imageDto = imageDto;
   }
 }

@@ -9,14 +9,13 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class RoleResponse extends CommonResponse {
-  
-  private RoleDto role;
+public class RoleResponse extends CommonResponse<RoleDto> {
   
   public RoleResponse(RoleDto role) {
     super(
-      ResponseConstant.StatusCodeResponse.SUCCESS_CODE,
-      ResponseConstant.StatusCodeResponse.GET_RECORD_SUCCESS_MSG);
-    this.role = role;
+      ResponseConstant.StatusCodeResponse.SUCCESS_STATUS,
+      ResponseConstant.StatusCodeResponse.GET_RECORD_SUCCESS_MSG,
+      role
+    );
   }
 }

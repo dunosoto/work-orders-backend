@@ -8,15 +8,13 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class CreateClientResponse extends CommonResponse {
-
-  private ClientDto clientDto;
+public class CreateClientResponse extends CommonResponse<ClientDto> {
   
   public CreateClientResponse(ClientDto clientDto) {
     super(
-      ResponseConstant.StatusCodeResponse.CREATED_CODE,
-      ResponseConstant.StatusCodeResponse.SUCCESS_MSG
+      ResponseConstant.StatusCodeResponse.SUCCESS_STATUS,
+      ResponseConstant.StatusCodeResponse.SUCCESS_MSG,
+      clientDto
     );
-    this.clientDto = clientDto;
   }
 }

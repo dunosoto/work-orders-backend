@@ -10,8 +10,9 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring")
 public interface AssistanceMapper {
 
-  @Mapping(target = "Assistance.address", source = "java(address)")
-  @Mapping(target = "Assistance.assistanceType", source = "java(serviceType)")
+  @Mapping(target = "Assistance.address", expression = "java(address)")
+  @Mapping(target = "Assistance.assistanceType", expression = "java(serviceType)")
+  @Mapping(target="id", ignore = true)
   Assistance createAssistanceRequestToAssistance(Address address, AssistanceType serviceType);
 
   AssistanceDto assistanceToAssistanceDto(Assistance assistance);

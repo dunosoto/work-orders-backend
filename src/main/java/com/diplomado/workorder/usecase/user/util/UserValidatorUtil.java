@@ -1,5 +1,6 @@
 package com.diplomado.workorder.usecase.user.util;
 
+import com.diplomado.workorder.api.request.auth.LoginRequest;
 import com.diplomado.workorder.common.Message;
 import com.diplomado.workorder.domain.user.User;
 import com.diplomado.workorder.exception.user.NotFoundUserException;
@@ -23,6 +24,16 @@ public class UserValidatorUtil {
       throw new NotFoundUserException(message.getMessage("User.not.found"));
     }
 
+    return optionalUser.get();
+  }
+  
+  public User validateLogin(LoginRequest loginRequest) {
+    Optional<User> optionalUser = userService.getUserByEmailAndPassword(loginRequest.getEmail(), loginRequest.getPassword());
+    
+    if (optionalUser.isEmpty()) {
+      throw new NotFoundUserException(message.getMessage("User.not.found"));
+    }
+    
     return optionalUser.get();
   }
 }

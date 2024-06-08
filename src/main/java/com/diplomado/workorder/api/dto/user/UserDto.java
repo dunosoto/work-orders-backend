@@ -11,10 +11,9 @@ import java.util.Date;
 public class UserDto {
   
   private Long id;
-  private String userName;
-  private String password;
+  private String firstName;
+  private String lastName;
   private String email;
-  private UserDetailDto userDetail;
   private Date createdAt;
   private RoleDto role;
 }

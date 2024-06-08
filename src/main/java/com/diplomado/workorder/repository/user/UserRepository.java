@@ -14,9 +14,10 @@ public interface UserRepository extends JpaRepository<User, Long> {
   Optional<User> findById(Long Id);
   void delete(User user);
   
-  @Transactional
-  @Modifying
-  @Query(value = "UPDATE User user SET user.userName=:newUserName WHERE user.id=:userId")
-  User updateUserNameByUserId(@Param("newUserName") String newUserName, @Param("userId") Long userId);
+//  @Transactional
+//  @Modifying
+//  @Query(value = "UPDATE User user SET user.userName=:newUserName WHERE user.id=:userId")
+//  User updateUserNameByUserId(@Param("newUserName") String newUserName, @Param("userId") Long userId);
   
+  Optional<User> getUserByEmailAndPassword(String email, String password);
 }
